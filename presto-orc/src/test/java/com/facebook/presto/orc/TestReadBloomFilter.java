@@ -116,11 +116,9 @@ public class TestReadBloomFilter
         OrcReader orcReader = new OrcReader(
                 orcDataSource,
                 OrcEncoding.ORC,
-                new DataSize(1, MEGABYTE),
-                new DataSize(1, MEGABYTE),
-                new DataSize(1, MEGABYTE),
                 new StorageOrcFileTailSource(),
-                new StorageStripeMetadataSource());
+                new StorageStripeMetadataSource(),
+                OrcTestUtils.createDefaultTestConfig());
 
         assertEquals(orcReader.getColumnNames(), ImmutableList.of("test"));
         assertEquals(orcReader.getFooter().getRowsInRowGroup(), 10_000);
