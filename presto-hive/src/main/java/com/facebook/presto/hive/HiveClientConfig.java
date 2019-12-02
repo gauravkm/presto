@@ -152,7 +152,7 @@ public class HiveClientConfig
 
     private boolean pushdownFilterEnabled;
     private boolean rangeFiltersOnSubscriptsEnabled;
-    private boolean zstdJniDecompressionEnabled;
+    private boolean zstdJniDecompressionEnabled = true;
 
     public int getMaxInitialSplits()
     {
